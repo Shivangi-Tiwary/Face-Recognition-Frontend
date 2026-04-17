@@ -62,7 +62,7 @@ export default function AttendanceHistory() {
 
       {/* Stats Cards */}
       <div style={{ display: "flex", gap: 14, flexWrap: "wrap", marginBottom: 24 }}>
-        <StatCard label="Total Days" value={stats.total} />
+        <StatCard label="Total Days" value={stats?.total ?? 0} />
         <StatCard label="On Time" value={stats.onTime} color="#22c55e" />
         <StatCard label="Late" value={stats.late} color="#f59e0b" />
         <StatCard label="Absent" value={stats.absent} color="#ef4444" sub={`out of ${stats.workingDays} working days`} />
@@ -139,7 +139,7 @@ function WeeklySummary({ attendance }) {
         {entries.map(([week, data], i) => (
           <div key={week} style={{ flex: 1, minWidth: 140, background: "#fafafa", borderRadius: 8, padding: "12px 16px", border: "1px solid #f0f0f0" }}>
             <div style={{ fontSize: 12, color: "#888", marginBottom: 6 }}>Week {i + 1}</div>
-            <div style={{ fontSize: 15, fontWeight: 700, color: "#0f1117" }}>{data.total} days</div>
+            <div style={{ fontSize: 15, fontWeight: 700, color: "#0f1117" }}>{data?.total ?? 0} days</div>
             <div style={{ fontSize: 12, color: "#22c55e", marginTop: 2 }}>{data.present} on time</div>
             {data.late > 0 && <div style={{ fontSize: 12, color: "#f59e0b" }}>{data.late} late</div>}
           </div>

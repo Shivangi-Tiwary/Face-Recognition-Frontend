@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { useAuth } from "../context/AuthContext";
 import api from "../api/axios";
-import "../styles/chat.css";
+import "../styles/Chat.css";
 
 export default function ChatWindow({ room, socket, onLeaveGroup }) {
   const { user } = useAuth();

@@ -43,13 +43,26 @@ const Chatbot = () => {
     setIsLoading(true);
 
     try {
+      const token = localStorage.getItem("token");
+      
       const response = await fetch('https://face-recognition-backend-yrct.onrender.com/api/chatbot', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          ...(token && { Authorization: `Bearer ${token}` }),
         },
         body: JSON.stringify({ message: inputMessage })
       });
+
+      if (response.status === 401) {
+        const errorMessage = {
+          type: 'bot',
+          text: 'Session expired. Please log in again.',
+          timestamp: new Date()
+        };
+        setMessages(prev => [...prev, errorMessage]);
+        return;
+      }
 
       const data = await response.json();
 

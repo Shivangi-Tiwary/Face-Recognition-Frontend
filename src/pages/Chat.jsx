@@ -4,7 +4,7 @@ import { io } from "socket.io-client";
 import { useAuth } from "../context/AuthContext";
 import Sidebar from "../components/Sidebar";
 import ChatWindow from "../components/ChatWindow";
-import "../styles/chat.css";
+import "../styles/Chat.css";
 
 let socket;
 

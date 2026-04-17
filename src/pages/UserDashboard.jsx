@@ -191,11 +191,8 @@ export function PageHeader({ title, subtitle, action }) {
   );
 }
 
-export function StatCard({ label, value, color = "#4f8ef7", sub }) {
-  return (StatCardContent(label, value, color, sub));
-}
 
-function StatCardContent(label, value, color, sub) {
+export function StatCard({ label, value, color = "#4f8ef7", sub }) {
   return (
     <div style={{
       background: "#fff", borderRadius: 12, border: "1px solid #e8eaed",

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useAuth } from "../context/AuthContext";
 import api from "../api/axios";
-import "../styles/sidebar.css";
+import "../styles/Sidebar.css";
 
 export default function Sidebar({
   onSelectRoom,

@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import api from "../../api/axios";
 import { useAuth } from "../../context/AuthContext";
 import toast from "react-hot-toast";
-import "./TicketingSystem.scss";
+import "./Ticketingsystem.scss";
 
 // ── Constants ──────────────────────────────────────────────────────────────
 const CATEGORIES = ["All", "Recognition Failure", "Hardware", "AI Model", "Enrollment", "Access Control"];

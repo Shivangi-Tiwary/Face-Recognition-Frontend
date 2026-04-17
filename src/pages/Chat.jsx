@@ -14,10 +14,10 @@ export default function Chat({ embedded = false }) {
   const [activeRoom, setActiveRoom] = useState(null);
 
   useEffect(() => {
-    socket = io("http://localhost:5000", {
-      auth: { token }
+    socket = io(import.meta.env.VITE_SOCKET_URL, {
+    auth: { token }
     });
-    socket.on("connect", () => console.log("🟢 Socket connected"));
+   socket.on("connect", () => console.log("🟢 Socket connected"));
     socket.on("connect_error", (err) => console.error("Socket error:", err.message));
     return () => socket.disconnect();
   }, [token]);
